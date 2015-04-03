@@ -42,6 +42,8 @@ $('#edit').keydown(function(event) {
     return true;
   } else if (219 <= event.keyCode && event.keyCode <= 222) { // punctuations
     return true;
+  } else if (37 <= event.keyCode && event.keyCode <= 40) { // arrow keys
+    return true;
   } else if (enmode) {
     return true;
   } else if (65 <= event.keyCode && event.keyCode <= 90) { // A-Z
@@ -57,9 +59,7 @@ $('#edit').keydown(function(event) {
       candidates = [];
       offset = 0;
       show_candidates();
-      var edit = $('#edit').val();
-      edit = edit.substring(0, edit.length - 1);
-      $('#edit').val(edit);
+      return true;
     }
   } else if (0x30 <= event.keyCode && event.keyCode <= 0x39) { // 0-9
     var select = event.keyCode - 0x30 - 1;
@@ -68,7 +68,7 @@ $('#edit').keydown(function(event) {
     }
     var edit = $('#edit').val();
     if (candidates.length === 0) {
-      $('#edit').val(edit + (event.keyCode-0x30).toString());
+      return true;
     } else if (offset + select < candidates.length) {
       $('#edit').val(edit + candidates[offset+select]);
       preedit = '';
@@ -85,8 +85,7 @@ $('#edit').keydown(function(event) {
       }
       show_candidates();
     } else {
-      var edit = $('#edit').val();
-      $('#edit').val(edit + ' ');
+      return true;
     }
   } else {
     console.log(event.keyCode);
