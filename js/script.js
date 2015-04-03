@@ -35,6 +35,17 @@ function show_candidates() {
   $('#candidates').html(content);
 }
 
+function insert(s) {
+  var edit = $('#edit').val();
+  var pos1 = $('#edit')[0].selectionStart;
+  var pos2 = $('#edit')[0].selectionEnd;
+  var pos3 = pos1 + s.length;
+  var prefix = edit.substring(0, pos1);
+  var suffix = edit.substring(pos2, edit.length);
+  $('#edit').val(prefix + s + suffix);
+  $('#edit')[0].setSelectionRange(pos3, pos3);
+}
+
 $('#edit').keydown(function(event) {
   if (event.ctrlKey || event.shiftKey || event.altKey || event.metaKey) {
     return true;
@@ -66,11 +77,10 @@ $('#edit').keydown(function(event) {
     if (select === -1) {
       select = 9;
     }
-    var edit = $('#edit').val();
     if (candidates.length === 0) {
       return true;
     } else if (offset + select < candidates.length) {
-      $('#edit').val(edit + candidates[offset+select]);
+      insert(candidates[offset+select]);
       preedit = '';
       $('#preedit').val(preedit);
       candidates = [];
