@@ -116,9 +116,9 @@ $('#selectall').click(function(event){
 });
 $('#ecswitch').click(function(event){
   if (enmode) {
-    $('#ecswitch').html('廣');
+    $('#ecswitch').html('Cantonese');
   } else {
-    $('#ecswitch').html('En');
+    $('#ecswitch').html('English');
   }
   enmode = !enmode;
   $('#edit').focus();
