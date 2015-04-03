@@ -1,0 +1,18 @@
+textarea {
+  resize: none;
+  margin: 0;
+}
+
+ul#buttons {
+  margin-left: 2px;
+  margin-right: -1px;
+}
+
+#bottom ul {
+  display: table;
+  margin: auto;
+}
+
+#bottom ul li:first-child {
+  margin-left: 0px;
+}

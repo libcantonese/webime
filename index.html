@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web IME</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+  <div class="row">
+    <div class="large-12 columns">
+      <h3 class="text-center">Web IME</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <input type="text" placeholder="Just type" id="preedit"></input>
+      <textarea id="edit" rows="3"></textarea>
+      <div>
+        <ul id="buttons" class="button-group even-3">
+          <li><a id="selectall" href="#" class="small button">Select All</a></li>
+          <li><a id="ecswitch" href="#" class="small button">En</a></li>
+          <li><a id="config" href="#" class="small button">Config</a></li>
+        </ul>
+      </div>
+      <div id="usage" class="panel">
+        <p><strong>Usage</strong><br>
+        Press space to see next page of candidates.<br>
+        The current scheme is Jyutping (LSHK).</p>
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <div class="panel" id="candidates">
+        <ol style="visibility: hidden">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>0</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="bottom" class="large-12 columns">
+      <ul class="inline-list">
+        <li><a href="#">about</a></li>
+        <li><a href="#">feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+  $(document).foundation();
+  </script>
+  <script src="js/jyutping0.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
