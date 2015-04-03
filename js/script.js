@@ -107,9 +107,9 @@ $('#selectall').click(function(event){
 });
 $('#ecswitch').click(function(event){
   if (enmode) {
-    $('#ecswitch').html('En');
-  } else {
     $('#ecswitch').html('廣');
+  } else {
+    $('#ecswitch').html('En');
   }
   enmode = !enmode;
   $('#edit').focus();
